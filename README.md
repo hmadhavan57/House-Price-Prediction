@@ -48,10 +48,10 @@ Choose JavaScript as the language.
 
 
 #### API register
-![alt text](Average-Calculator\ScreenShot\api.png)
+![alt text](Average-Calculator/ScreenShot/api.png)
 
 #### Desktop_View
-![alt text](Average-Calculator\ScreenShot\desktop-view.png)
+![alt text](Average-Calculator/ScreenShot/desktop-view.png)
 
 #### Mobile_View
-![alt text](Average-Calculator\ScreenShot\mobile-view.png)
+![alt text](Average-Calculator/ScreenShot/mobile-view.png)
