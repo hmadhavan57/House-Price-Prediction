@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react'
+import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const NumberPage = () => {
     const [numberId, setNumberId] = useState()
@@ -38,6 +39,8 @@ const NumberPage = () => {
             });
 
             setResponse(numberResponse.data);
+            setNumberId('');
+
         } catch (error) {
             setError('Error fetching data');
         }
