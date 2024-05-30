@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const NumberPage = () => {
-    const [numberId, setNumberId] = useState('');
-    const [response, setResponse] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
+    const [numberId, setNumberId] = useState()
+    const [response, setResponse] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState()
 
     const fetchNumbers = async () => {
         setLoading(true);
         setError('');
+
 
         // Check if the entered value is one of 'p', 'f', 'e', or 'r'
         if (!['p', 'f', 'e', 'r'].includes(numberId.toLowerCase())) {
@@ -18,9 +19,25 @@ const NumberPage = () => {
             return;
         }
 
+
+        const clientId = '83cdafaa-8054-46d0-b1b6-84f52c8fb4bc';
+        const clientSecret = 'WwCJryEgnCIbGtTx';
+
         try {
-            const response = await axios.get(`http://20.244.56.144/test/${numberId}`);
-            setResponse(response.data);
+            const authResponse = await axios.post('http://20.244.56.144/test/auth', {
+                clientId,
+                clientSecret,
+            });
+
+            const accessToken = authResponse.data.access_token;
+
+            const numberResponse = await axios.get(`http://20.244.56.144/test/${numberId}`, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                },
+            });
+
+            setResponse(numberResponse.data);
         } catch (error) {
             setError('Error fetching data');
         }
@@ -36,7 +53,7 @@ const NumberPage = () => {
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
-                <div className="input-group mb-3 gap-2">
+                <div className="input-group mb-3 gap-1">
                     <input
                         type="text"
                         className="form-control"
