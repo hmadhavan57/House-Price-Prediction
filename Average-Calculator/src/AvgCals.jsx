@@ -1,5 +1,4 @@
-// src/components/NumberWindow.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const NumberPage = () => {
@@ -11,6 +10,13 @@ const NumberPage = () => {
     const fetchNumbers = async () => {
         setLoading(true);
         setError('');
+
+        // Check if the entered value is one of 'p', 'f', 'e', or 'r'
+        if (!['p', 'f', 'e', 'r'].includes(numberId.toLowerCase())) {
+            setError('Invalid input. Please enter only "p", "f", "e", or "r".');
+            setLoading(false);
+            return;
+        }
 
         try {
             const response = await axios.get(`http://20.244.56.144/test/${numberId}`);
@@ -28,13 +34,13 @@ const NumberPage = () => {
     };
 
     return (
-        <div className="container ">
+        <div className="container">
             <form onSubmit={handleSubmit}>
                 <div className="input-group mb-3 gap-2">
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter 'primes', 'fibo', 'even', or 'random'"
+                        placeholder="Enter 'p', 'f', 'e', or 'r'"
                         value={numberId}
                         onChange={(e) => setNumberId(e.target.value)}
                     />
