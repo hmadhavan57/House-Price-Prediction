@@ -1,57 +1,22 @@
-# Average Calculator
+# House Price Prediction
 
-This Average calculator is based on API register microservice where this project covers only frontend using React
+This project utilizes TensorFlow to implement a Random Forest model for predicting house prices. The focus is on building the model and front-end interface for visualizing predictions.
 
-## Register API 
+## 1.Data Collection:
 
-To register the API service , run the **api.html** and replace the CODE #9 with your endpoint and from CODE #15 to CODE #19 replace with your Credentials.
-
-
-
-## Installation
-
-1. Create a new folder for this front-end application:
-
-     ```bash
-   mkdir Front-End-App
-   ```
-
-2. Initialize a new Vite project:
-
-    ```bash
-   npm init vite@latest
-    ```
-
-Enter your project name.
-Select React as the framework.
-Choose JavaScript as the language.
-
-3. Navigate to the project folder:
-
-     ```bash
-   cd Front-End-App
-
-4. Install dependencies:
-
-    ```bash
-    npm install
-    npm install axios bootstrap
-    ```
-
-5. Start the client : 
-
-    ```bash
-    npm run dev    
-    ```
-
-### ScreenShot
+Gather a dataset containing historical house prices and relevant features from Kaggle Dataset.
 
 
-#### API register
-![alt text](Average-Calculator/ScreenShot/api.png)
+## 2.Data Preprocessing:
 
-#### Desktop_View
-![alt text](Average-Calculator/ScreenShot/desktop-view.png)
+-> Handle missing values, normalize numerical features, and encode categorical variables.
+-> Split the dataset into training and testing sets.
 
-#### Mobile_View
-![alt text](Average-Calculator/ScreenShot/mobile-view.png)
+## 3.Model Training
+
+-> Initialize a Random Forest model using TensorFlow.
+-> Train the model on the training dataset, adjusting hyperparameters for optimal performance.
+
+## 4.Prediction
+
+Use the trained Random Forest model to predict house prices for new data.
