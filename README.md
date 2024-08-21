@@ -2,6 +2,10 @@
 
 This project utilizes TensorFlow to implement a Random Forest model for predicting house prices. The focus is on building the model and front-end interface for visualizing predictions.
 
+# Data Description 
+
+[Link Text]('data_description.txt')
+
 ## 1.Data Collection:
 
 Gather a dataset containing historical house prices and relevant features from Kaggle Dataset.
@@ -20,3 +24,4 @@ Gather a dataset containing historical house prices and relevant features from K
 ## 4.Prediction
 
 Use the trained Random Forest model to predict house prices for new data.
+
