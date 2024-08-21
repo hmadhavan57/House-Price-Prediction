@@ -4,12 +4,15 @@ This project utilizes TensorFlow to implement a Random Forest model for predicti
 
 # Data Description 
 
-[Link Text]('data_description.txt')
+[Data Description](/data_description.txt)
+
+# Training Dataset
+
+[Train.csv](/train.csv)
 
 ## 1.Data Collection:
 
 Gather a dataset containing historical house prices and relevant features from Kaggle Dataset.
-
 
 ## 2.Data Preprocessing:
 
